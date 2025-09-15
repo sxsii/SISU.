@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+background: url("sisu_bg_2.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 15vw;
+  padding: 3rem 2rem 0 2rem;
+  margin: .7rem;
+  background: transparent;
+  border-radius: .2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  display: block;
+  padding: 0 0 1rem 0;
+}
+
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav li {
+  margin: 1rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.sidebar nav li.active {
+  color: #a34ee6;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+  margin: .7rem;
+  background: transparent;
+  border-radius: .2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 2rem;
+  line-height: 2.5rem;
+  padding: 0 0 2rem 0;
+}
+
+.welcome span {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6b46c1;
+}
+
+.welcome small {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  transition: transform 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b46c1;
+}
+
+.card small {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: #999;
+}
