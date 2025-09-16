@@ -1,7 +1,7 @@
-const { invoke } = window.__TAURI__.core;
+import { invoke } from "@tauri-apps/api/tauri";
 
-let greetInputEl;
-let greetMsgEl;
+const specs = await invoke("get_computer_specs");
+console.log(specs);
 
 /*
 async function greet() {
