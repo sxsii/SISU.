@@ -24,3 +24,27 @@ document.querySelectorAll(".sidebar nav li").forEach(item => {
     document.getElementById(pageId).classList.add("active");
   });
 });
+
+// Toggle submenu on click
+document.querySelectorAll(".has-submenu").forEach(item => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    item.classList.toggle("open");
+  });
+});
+
+// Page switching for leaf items
+document.querySelectorAll(".sidebar nav li[data-page]").forEach(item => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    document.querySelectorAll(".sidebar nav li").forEach(li => li.classList.remove("active"));
+    item.classList.add("active");
+
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+
+    const pageId = item.getAttribute("data-page");
+    document.getElementById(pageId).classList.add("active");
+  });
+});
+
