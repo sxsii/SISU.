@@ -1,13 +1,21 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-background: url("sisu_bg_2.png") no-repeat center center fixed;
+background: url("./assets/sisu_bg_2.png") no-repeat center center fixed;
   background-size: cover;
 }
 
 .container {
   display: flex;
   height: 100vh;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
 }
 
 .sidebar {
@@ -41,6 +49,10 @@ background: url("sisu_bg_2.png") no-repeat center center fixed;
 .sidebar nav li.active {
   color: #a34ee6;
   font-weight: 600;
+}
+
+.sidebar nav li:hover {
+  color: #a34ff8;
 }
 
 .content {
