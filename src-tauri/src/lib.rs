@@ -41,7 +41,7 @@ struct ComputerSpecs {
 }
 
 #[tauri::command]
-pub fn get_computer_specs() -> ComputerSpecs {
+fn get_computer_specs() -> ComputerSpecs {
     let mut sys = System::new_all();
     sys.refresh_all();
 
@@ -143,6 +143,7 @@ fn get_graphics_info() -> Vec<String> {
 }
 
 // smaller helper functions
+#[allow(dead_code)]
 fn collect_gpus(out: &mut Vec<String>) -> Result<(), Box<dyn std::error::Error>> {
     unsafe {
         let factory: IDXGIFactory1 = CreateDXGIFactory1()?;

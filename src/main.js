@@ -1,7 +1,22 @@
 import { invoke } from "@tauri-apps/api/tauri";
 
-const specs = await invoke("get_computer_specs");
-console.log(specs);
+async function loadSpecs() {
+  try {
+    const specs = await invoke("get_computer_specs");
+
+    document.getElementById("os").textContent = specs.os;
+    document.getElementById("cpu").textContent = specs.cpu;
+    document.getElementById("ram").textContent = specs.ram;
+    document.getElementById("storage").textContent = `${specs.storage_used} / ${specs.storage_total}`;
+    document.getElementById("directx").textContent = specs.directx;
+    document.getElementById("gpu").textContent = specs.gpu.join(", ");
+    console.log("Works");
+  } catch (e) {
+    console.error("Failed to load specs:", e);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadSpecs);
 
 /*
 async function greet() {
